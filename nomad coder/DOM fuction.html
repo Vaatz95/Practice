@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Something</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.
+	// DOM 관련 찾아보기
+	// querySelector('CSS 스타일 적용방식 같이 값을 이곳에 입력')
+	// ex) document.querySelector("#title") 여기서 title은 사전에 정의해놓은 객체	
+	// 이벤트 발생시 작동하는 함수
+	// ex) 
+			const title = document.querySelector('#title');
+
+			const BASE_COLOR = "#34495e";
+			const OTHER_COLOR = "#7f8c8d";
+
+			function changecolor(){
+				const currentColor = title.style.color;
+				if (currentColor === BASE_COLOR){
+					title.style.color= OTHER_COLOR;
+				} else {
+					title.style.color = BASE_COLOR;
+
+				}
+
+			}	
+
+			function init(){
+				title.style.color = 'BASE_COLOR';
+				title.addEventListener("mouseenter", changecolor);
+
+
+			}
+			init().
+			
+			/*
+
+			function system_offline(){
+				console.log("System offline");
+			}
+
+			function system_online(){
+				console.log("System Online");
+
+			}
+
+			window.addEventListener("offline", system_offline);
+			window.addEventListener("online", system_online);
+			*/
+			title.classlist.toggle(CLICKED_CLASS);
+			
+			transition: color 0.5 s ease-in-out;
+			// 색깔이 서서히 바뀌는 효과
+	</script>
+
+</body>
+</html>
