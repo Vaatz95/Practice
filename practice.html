@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	function cal (width,height){
+		var area = width * height;
+		return area;
+	}		
+
+	function get (width, height, depth){
+		var area = width * height ; 
+		var volume = width * height * depth; 
+		return [area, volume]; 
+	}
+
+	console.log('area is' +  get(3, 2, 3)[0]);
+	console.log('volume is' +  get(3, 2, 3)[1]);
+
+
+
+
+ </script>
+</body>
+</html>

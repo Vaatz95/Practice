@@ -1,0 +1,74 @@
+Repeat Water-melon.html
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		// 처음 시도한 해결법 길이라고 명시되어있기에 lenght 라고 유념하고  시작값을 1로 가정함
+			function solution(n){
+			var answer =''
+			for (var i = 1; i<=n ; i++){
+				if(i%2 === 0){
+					answer += '박'
+				} else {
+					answer += '수'
+
+				}
+
+			}
+			 return 
+		}
+
+		// 생각해보니 0으로 시작하는걸 떠올려서 약간 변경을 줌. 이럴 경우에는 i < 10000을 가정하고 작성해야함  index는 0 부터 시작하니 
+				function solution(n){
+			var answer = '';
+				for( var i = 0 ; i < n ; i++){
+					if (i % 2 === 0) {
+						result += '수'
+					} else { 
+						result += '박'
+
+						 }
+
+
+				}
+
+				return result
+
+			}
+
+		// 너무나 간단하게도 str.repeat 메소드를 활용하면 한줄 안에 해결 할 수 있다.
+		// 그리고 뒤에 substring 같은 경우에는 PoienbWeb에서 배웠던 기억이 가물하게 나서 PoienbWeb에 있는 substring 부분을 참고함
+		
+			function solution(n){
+			return '수박'.repeat(n).substring(0,n)
+
+			}
+		
+
+			function re (n){
+				if( n < 10 ){
+					'박수'.repeat(n).substring(0,n)
+				}
+				return n;
+			}
+			// 앞에 문제에서는 사전에  n의 길이가 주어져있다는 가정하에서 작성되었지만 var 선언 방식과 length를 활용해서 특정 수열의 길이만큼 수박을 치는걸 작성해봄
+		
+			var name = [1,2,3,4,5,6,7,8,9,10];
+			var number1 = name.length;
+			for(i =0 ; i < number1 , i++){
+
+				'수박'.repeat.substring(0,number1);
+			}
+
+
+
+
+
+	</script>
+
+</body>
+</html>
