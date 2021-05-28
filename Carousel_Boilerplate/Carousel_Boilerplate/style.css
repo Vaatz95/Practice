@@ -1,0 +1,68 @@
+body {
+  background-image: url("./images/bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Varela Round", sans-serif;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  font-size: 72px;
+  margin: 0px;
+}
+
+.box {
+
+	box-sizing: border-box;
+	width:900px;
+	height:300px;
+	border: solid 50px #3474FF;
+	border-width: 15px 40px 40px 40px;
+	padding: 50px;
+	background-color: #FFFFFF;
+	position: absolute;
+	box-shadow: 0px 0px 2px 3px gray;
+	top: 60%;
+	left: 27%;
+  padding-top: 60px;
+  
+}
+
+  button { 
+ 	width :14px;
+ 	height:14px;
+ 	border-radius:50%;
+ 	background-color: black;
+  position: relative;
+ 	top: 0%;
+ 	left: 35.5%;
+ 	border: none;
+ 	margin-left: 80px;
+  margin-top: 287px; 
+ 	opacity: 0.5;
+}
+
+  .arrow1 {
+  width :20px;
+  height:20px;
+  border-radius:50%;
+  position: absolute;
+  border: none; 
+  top: 75%;
+  left: 27.5%;
+  margin: 0;
+  background-color: black;
+
+  }
+
+  .arrow2 {
+  width :20px;
+  height:20px;
+  border-radius:50%;
+  position: absolute;
+  border: none; 
+  top: 75%;
+  left:72.4%;
+  background-color: black;
+  }
