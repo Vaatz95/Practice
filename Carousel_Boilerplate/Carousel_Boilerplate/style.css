@@ -10,47 +10,60 @@ h1 {
   text-align: center;
   font-size: 72px;
   margin: 0px;
+  z-index: 1;
 }
 
 .box {
+  margin-bottom: 600px;
 
-	box-sizing: border-box;
-	width:900px;
-	height:300px;
-	border: solid 50px #3474FF;
-	border-width: 15px 40px 40px 40px;
-	padding: 50px;
-	background-color: #FFFFFF;
-	position: absolute;
-	box-shadow: 0px 0px 2px 3px gray;
-	top: 60%;
-	left: 27%;
-  padding-top: 60px;
+
+}
+
+.box img {
+  box-sizing: border-box;
+  width:1000px;
+  height:500px;
+  border: solid 50px #87CEEB;
+  border-width: 30px 40px 40px 40px;
+  padding: 0px;
+  background-color: white;
+  position: absolute;
+  box-shadow: 0px 0px 2px 2px #87CEEB;
+  top: 0px;
+  left: 470px;
+  object-fit: scale-down;
+  z-index: -1;
   
 }
 
+
+
+
   button { 
- 	width :14px;
- 	height:14px;
+ 	width :17px;
+ 	height:17px;
  	border-radius:50%;
  	background-color: black;
   position: relative;
- 	top: 0%;
+ 	top: 475px;
  	left: 35.5%;
  	border: none;
  	margin-left: 80px;
-  margin-top: 287px; 
- 	opacity: 0.5;
+  margin-top: 0px; 
+ 	opacity: 1;
+  z-index: 2
+ 
+
 }
 
   .arrow1 {
-  width :20px;
-  height:20px;
+  width :21px;
+  height:21px;
   border-radius:50%;
   position: absolute;
   border: none; 
-  top: 75%;
-  left: 27.5%;
+  top: 225px;
+  left: 25.5%;
   margin: 0;
   background-color: black;
 
@@ -62,7 +75,10 @@ h1 {
   border-radius:50%;
   position: absolute;
   border: none; 
-  top: 75%;
-  left:72.4%;
+  top: 225px;
+  left:76.5%;
   background-color: black;
   }
+
+
+
