@@ -3,7 +3,7 @@ const arrow1 = document.querySelectorAll("input");
 const img = document.querySelector('.boxbg');
 const Num = document.querySelector('.Number');
 const getNum = document.querySelectorAll('button');
-
+var num = 0;
 
 
 function Pickbg(){
@@ -16,65 +16,55 @@ function Pickbg(){
 }
 
 function changeImg0(){
-	
-	img.setAttribute("src", `images/image-1.png`)
-}
+		num = 0 ; 
+	img.setAttribute("src", `images/image-${num}.png`)
+	}
 
 function changeImg1(){
-		
-	img.setAttribute("src", `images/image-2.png`)
+	num = 1	
+	img.setAttribute("src", `images/image-${num}.png`)
 }
 
 function changeImg2(){
-		
-	img.setAttribute("src", `images/image-3.png`)
+	num = 2
+	img.setAttribute("src", `images/image-${num}.png`)
 }
 function changeImg3(){
-		
-	img.setAttribute("src", `images/image-4.png`)
+	num = 3		
+	img.setAttribute("src", `images/image-${num}.png`)
 }
 
 function changeImg4(){
-		
-	img.setAttribute("src", `images/image-5.png`)
+	num = 4	
+	img.setAttribute("src", `images/image-${num}.png`)
 }
 
-
+// 그러면 num를 var로 정하고 해당 박스 안에서 그 숫자 넘버로 활용 ~
 
 function clikcArr(){
 
-	arrow1[0].addEventListener('click', ChangePicB)
-	arrow1[1].addEventListener('click', ChangePicA)
+	arrow1[0].addEventListener('click', PreSlide)
+	arrow1[1].addEventListener('click', nextSlide)
 
 }
 
-var num = 1;
-
-function ChangePicB(){
-	
-if(num){
-	if(num ==1) return;
-		num--;
 
 
-	}
-	
-	img.setAttribute("src", `images/image-${num}.png`)
-	
-    }
 
 
-function ChangePicA(){
-	
-if(num){
-	if(num ==5) return;
-		num++;
-	
-	img.setAttribute("src", `images/image-${num}.png`)
-    }
-    }
 
+function nextSlide(){
 
+ num = (num >= 4) ? 0 : ++num;
+ img.setAttribute("src", `images/image-${Math.abs(num)}.png`)	
+}
+
+function PreSlide(){
+
+num = (num <= -4) ? Math.abs(0) : --num;
+    img.setAttribute("src", `images/image-${Math.abs(num)}.png`)
+   }		
+    
 
 
 function arrowbtn (){
@@ -101,3 +91,6 @@ function init(){
 }
 
 init()
+
+
+
