@@ -18,8 +18,6 @@ h2 {
 	font-size: 50px;
 
 
-
-
 }
 
 .calender {
@@ -27,7 +25,6 @@ h2 {
 }
 
 .calender table {
-	border: solid gray 1px;
 	position: absolute;
 	text-align: center;
 	left:815px;
@@ -42,6 +39,25 @@ h2 {
 	text-align: center;
 	margin: 40px;
 	top: 830px;
+
+
+}
+
+
+.arrow1 {
+	position: absolute;
+	left: 770px;
+	top: 1030px;
+	font-weight: bold;
+} 
+
+
+
+.arrow2 {
+	position: absolute;
+	left: 1100px;
+	top: 1030px;
+	font-weight: bold;
 
 
 }
