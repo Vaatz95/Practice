@@ -4,13 +4,12 @@ const CurrentDate = document.querySelector('.Date')
 var today = new Date();
 var Year = today.getFullYear();
 var date = today.getDate();
-var Month = today.getMonth();
 var day = today.getDay();
+var Month = today.getMonth();
 var first_day = new Date(today.getFullYear(),today.getMonth(),1).getDay();
 var lastDate= new Date(today.getFullYear(),today.getMonth()+1,0).getDate();
 var calender = document.querySelector('table');
 var btn = document.querySelectorAll('button');
-var month = today.getMonth();
 
 
 
@@ -29,7 +28,7 @@ targetNum= target.getAttribute('id');
 var DayName = ['SUN' ,'MON','TUE','WED','THU','FRI','SAT']
 var d = new Date();
 	d.setFullYear(Year)
-	d.setMonth(Month-1);
+	d.setMonth(Month);
 	d.setDate(targetNum);
 	d.getDate();
 	d.getDay();
@@ -43,40 +42,18 @@ function Pre_Date(){
 var DayName = ['SUN' ,'MON','TUE','WED','THU','FRI','SAT']
 var d = new Date();
 	d.setFullYear(Year);
-	d.setMonth(Month-1);
-	var d_M = d.getMonth()
+	d.setMonth(Month);
+    d.setDate(1);			
+    d.getDate();			
+    d.getDay();
+    d_M = d.getMonth()
 
+	H2.innerHTML = `${DayName[d.getDay()]} <br><br> ${d.getDate()}`
+	}
 
-	if(d_M === Month){
-
-	H2.innerHTML = `${DayName[today.getDay()]} <br><br> ${today.getDate()}`
-	} else { 
-			
-			d.setDate(1);
-			d.getDate();
-			d.getDay();
-
-		H2.innerHTML = `${DayName[d.getDay()]} <br><br> ${d.getDate()}`}
-}
 
 	
 	
-
-function set_first(){
-var DayName = ['SUN' ,'MON','TUE','WED','THU','FRI','SAT']
-if (Month === 12){
-	today.setFullYear(Year+1)
-}
-today.setMonth(Month-1)
-today.setDate(1);
-today.getDate()
-today.getDay();
-
-H2.innerHTML = `${DayName[today.getDay()]} <br><br> ${today.getDate()}`
-}
-
-
-
 
 function MakCalender(){
 
@@ -138,20 +115,20 @@ var addrow = calender.insertRow();
 
 
  function highlight(){
- 
+ 	var this_Month = new Date().getMonth();
+ 	var this_date = today.getDate()
+ 	var this_year = new Date().getFullYear()
   	for (i = 1; i <= lastDate; i++){
   		set_target = document.getElementById([i])
   		set_targetVal = set_target.getAttribute('id');
-  	  if( date == set_targetVal){
+  	  if( this_date == set_targetVal && this_Month == Month && this_year == Year ){
   	  	set_target.style.background = "red";
   	  	}
   	  }
   	}
  
-  // id 값을 뽑아내는 것과 id 안에 넘버로 목표를 설정하는 차이
-
-
-  
+  // && 연속 조건은 && or 은 ||
+  // id 값을 뽑아내는 것과 id 안에 넘버로 목표를 설정하는 차이  
  	
 
 function PreButton(){
@@ -173,23 +150,22 @@ while(calender.rows.length > 1){
 	calender.deleteRow(calender.rows.length -1 );}
 
 
-month = month - 1;
+Month = Month - 1;
 
-if(month === -1){
+if(Month === -1){
 	Year = Year - 1;
-	month = month + 12;
+	Month = Month + 12;
 }
 
-first_day = new Date(Year,month,1).getDay();
-lastDate= new Date(Year,month+1,0).getDate();
-first_Date = new Date(Year,month,1).getDate();
+first_day = new Date(Year,Month,1).getDay();
+lastDate= new Date(Year,Month+1,0).getDate();
+first_Date = new Date(Year,Month,1).getDate();
 
 MakCalender()
 SmallDateP()
 Pre_Date()
 highlight()
-
-
+showDate()
 }
 
 
@@ -201,28 +177,29 @@ while(calender.rows.length > 1){
 calender.deleteRow(calender.rows.length -1 )}
 
 
-month = month + 1;
+Month = Month + 1;
 
-if(month === 12){
+if(Month === 12){
 	Year = Year + 1
-	month = month -12
+	Month = Month -12
 }
 
- first_day = new Date(Year,month,1).getDay();
- lastDate = new Date(Year,month+1,0).getDate();
- first_Date = new Date(Year,month,1).getDate();
+ first_day = new Date(Year,Month,1).getDay();
+ lastDate = new Date(Year,Month+1,0).getDate();
+ first_Date = new Date(Year,Month,1).getDate();
 
 MakCalender()
 
 
 SmallDateN()
 
-showDate()
+
 
 set_first()
 
 highlight()
 
+showDate()
 
 }
 
@@ -232,36 +209,29 @@ highlight()
 function showDate(){
 var DayName = ['SUN' ,'MON','TUE','WED','THU','FRI','SAT']
 var first_day = new Date(today.getFullYear(),today.getMonth(),today.getDate()).getDay();
+var d = new Date()
 
+if( Month === d.getMonth() && Year === d.getFullYear()){
 
 H2.innerHTML = `${DayName[first_day]} <br><br> ${date}`
 
 }
 
+}
 
 
 function SmallDateN(){
 var MonthName = ["JAN", "FEB", 'MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
 
-
-
-Month = Month + 1 
-if(Month === 13){
-Month = Month - 12;}
- 
-CurrentDate.innerText =`${MonthName[Month-1]}  ${Year}`
+CurrentDate.innerText =`${MonthName[Month]}  ${Year}`
 
  }
 
 
 function SmallDateP(){
 var MonthName = ["JAN", "FEB", 'MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
-Month = Month -1 
-if(Month === 0){
-Month = Month + 12;}
- 
-	
-CurrentDate.innerText =`${MonthName[Month-1]}  ${Year}`
+
+CurrentDate.innerText =`${MonthName[Month]}  ${Year}`
 
  }
 
@@ -269,15 +239,15 @@ CurrentDate.innerText =`${MonthName[Month-1]}  ${Year}`
 
 function set_first(){
 var DayName = ['SUN' ,'MON','TUE','WED','THU','FRI','SAT']
-if (Month === 12){
-	today.setFullYear(Year+1)
-}
-today.setMonth(Month-1)
-today.setDate(1);
-today.getDate()
-today.getDay();
+var a = new Date()
 
-H2.innerHTML = `${DayName[today.getDay()]} <br><br> ${today.getDate()}`
+a.setFullYear(Year)
+a.setMonth(Month)
+a.setDate(1);
+a.getDate()
+a.getDay();
+
+H2.innerHTML = `${DayName[a.getDay()]} <br><br> ${a.getDate()}`
 }
 
 
