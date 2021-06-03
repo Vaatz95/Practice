@@ -9,13 +9,20 @@ var Enter_count = 0;
 var Enterbtn = document.querySelector('.Enter');
 
 
+function lock(){
+
+Enterbtn.setAttribute('disabled',true)
+
+}
+
 function Set_Enter(){
 
 Enterbtn.addEventListener('keyup',function(e){
     if (e.keyCode === 13) {
 
-    			Set_number()
-    			compare()
+    	Set_number()
+
+    	compare() 
     			
  	 }
 	});
@@ -100,22 +107,28 @@ do {
 
 
 	 function compare(){
-	 
-	 	strike = 0
-	 	ball = 0
+	
+	
+			
+	 	strike = 0	
+	    ball = 0
 
-	  for (var i = 0 ; i < 3 ; i++){
+	  for ( i = 0 ; i < 3 ; i++){
 	  
 	  	if(N[i] == Num[i]){
+	  	 
 	  	 strike++
+
 	  	} 
-	  	 }
+	  	
 
-	  for (var n = 0 ; n < 3 ; n++){
+	  for ( n = 0 ; n < 3 ; n++){
 
-	  	if( i != n && N[i] == Num[n]){
+	  	if( i !== n && N[i] == Num[n]){
 	  		ball++
 	  	}
+
+	  		}
 
 	  		}
 
@@ -137,12 +150,20 @@ do {
 
 
 
+
 	function Game_Start(){
 
 		Start[0].addEventListener('click',genNum)
-
+		Start[0].addEventListener('click',Unlock)
 	}
 
+
+
+	function Unlock(){
+
+	Enterbtn.removeAttribute('disabled')
+	
+	}
 
 
 	function SET(){
@@ -155,7 +176,7 @@ do {
 
 
 	function Set_number(){
-  
+
      Num = document.getElementById('num').value;
 	 if( Num.length >= 4 ){alert('세자리 숫자만 입력하십시오')
 
@@ -163,11 +184,13 @@ do {
 	}
 
 function init(){
+	lock()
 	SET()
 	Set_number()
 	Game_Start()
 	Set_Enter()
 	EnterCount()
+
 }
 
 init()
