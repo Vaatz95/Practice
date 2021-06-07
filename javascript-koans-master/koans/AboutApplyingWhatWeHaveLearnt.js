@@ -32,16 +32,19 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
-
+    //_.메소드 활용하기 
       var productsICanEat = [];
-
+      var pick = function(b){
+        return ! b.containsNuts && _.all(b.ingredients, function(a){ return a !== 'mushrooms'})
+      } //_.all(대상, 조건) ! = 아니고
+      productsICanEat.push(products.filter(pick))
       /* solve using filter() & all() / any() */
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
@@ -55,14 +58,23 @@ describe("About Applying What We Have Learnt", function() {
       }
     }
 
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
 
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
+    var sum = 0;
+    var select_Num = _.range(0,1000).filter(function(n){
+      if(n % 3 === 0 || n % 5 ===0){
+        return n;
+      }
 
-    expect(233168).toBe(FILL_ME_IN);
+    })
+    sum = select_Num.reduce(function (arr, cur){
+      return arr + cur;
+    })    /* try chaining range() and reduce() */
+
+    expect(233168).toBe(sum);
   });
 
   /*********************************************************************************/
@@ -75,15 +87,20 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   it("should count the ingredient occurrence (functional)", function () {
     var ingredientCount = { "{ingredient name}": 0 };
+        _(products).chain() // 묶어주고
+                   .map(function(item){ return item.ingredients}) // Map을 활용해 해당 재료 요소를 구성된 개별 array로불러오고 
+                   .flatten() // 그것을 하나의 Array로 통합시키고
+                   .reduce(function(arr, cur){return ingredientCount[cur] = (ingredientCount[cur] || 0) + 1 })
+                   .value()
 
     /* chain() together map(), flatten() and reduce() */
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   /*********************************************************************************/

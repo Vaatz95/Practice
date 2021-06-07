@@ -8,7 +8,7 @@ describe("About Arrays", function() {
 
     var multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
     expect(multiTypeArray[0]).toBe(0);
-    expect(multiTypeArray[2]).toBe('two');
+    expect(multiTypeArray[2]).toBe("two");
     expect(multiTypeArray[3]()).toBe(3);
     expect(multiTypeArray[4].value1).toBe(4);
     expect(multiTypeArray[4]["value2"]).toBe(5);
@@ -77,19 +77,21 @@ describe("About Arrays", function() {
     var array = [1, 2];
     array.push(3);
 
-    expect(array).toEqual([1,2,3]);
+    expect(array).toEqual([1, 2, 3]);
 
     var poppedValue = array.pop();
     expect(poppedValue).toBe(3);
-    expect(array).toEqual([1,2]);
+    expect(array).toEqual([1, 2]);
   });
 
   it("should know about shifting arrays", function () {
     var array = [1, 2];
 
     array.unshift(3);
-    expect(array).toEqual([3,1,2]);
+    expect(array).toEqual([3, 1, 2]);
 
     var shiftedValue = array.shift();
     expect(shiftedValue).toEqual(3);
-    expect(array).toEqual([1,2]});
+    expect(array).toEqual([1, 2]);
+  });
+});

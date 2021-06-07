@@ -21,7 +21,7 @@ describe("About Functions", function() {
       return message;
     }
 
-    expect(getMessage()).toBe('Outer');
+    expect(getMessage()).toBe("Outer");
     expect(overrideMessage()).toBe("Inner");
     expect(message).toBe("Outer");
   });
@@ -35,7 +35,7 @@ describe("About Functions", function() {
       }
       return childfunction();
     }
-    expect(parentfunction()).toBe('local');
+    expect(parentfunction()).toBe("local");
   });
 
   it("should use lexical scoping to synthesise functions", function () {
@@ -92,7 +92,7 @@ describe("About Functions", function() {
 
     var praiseSinger = { givePraise: appendRules };
     expect(praiseSinger.givePraise("John")).toBe("John rules!");
-    // 이 부분은 주의해야할것 give praise 라는 함수가 appendRules 라는것 
+
     praiseSinger.givePraise = appendDoubleRules;
     expect(praiseSinger.givePraise("Mary")).toBe("Mary totally rules!");
 

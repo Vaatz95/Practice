@@ -17,7 +17,7 @@ describe("About Objects", function () {
     });
   });
 
-// 밑에 부분은 다시 한번 더 보기 
+
   it("should know properties that are functions act like methods", function () {
     var megalomaniac = {
       mastermind : "Brain",
@@ -103,7 +103,7 @@ describe("About Objects", function () {
         return "This circle has a radius of: " + this.radius;
       };
 
-      expect(simpleCircle.describe()).toBe("This circle has a radius of: 10");
+      expect(simpleCircle.describe()).toBe( "This circle has a radius of: 10");
       expect(colouredCircle.describe()).toBe("This circle has a radius of: 5");
   });
 });
