@@ -39,7 +39,7 @@ describe("About Applying What We Have Learnt", function() {
     //_.메소드 활용하기 
       var productsICanEat = [];
       var pick = function(b){
-        return ! b.containsNuts && _.all(b.ingredients, function(a){ return a !== 'mushrooms'})
+        return !b.containsNuts && _.all(b.ingredients, function(a){ return a !== 'mushrooms'})
       } //_.all(대상, 조건) ! = 아니고
       productsICanEat.push(products.filter(pick))
       /* solve using filter() & all() / any() */
