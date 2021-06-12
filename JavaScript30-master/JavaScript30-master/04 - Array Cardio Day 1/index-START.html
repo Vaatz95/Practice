@@ -37,28 +37,116 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+   /*const fifteen = inventors.filter(function(invetor){
+      if(invetor.year >= 1500 && invetor.year <= 1599){
+      return true;
+      }
+    })
+    console.table(fifteen); */
+    const fifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year <= 1599))
+    console.table(fifteen)
+
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+    const name = inventors.map(function(inventor){
+      return inventor.first +" "+ inventor.last
+    })
+    console.table(name);
+
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    const Year = inventors.sort(function(a,b){
+      if (a.year > b.year){
+        return 1;
+    } else { return -1;
+
+     }
+     })
+
+
+
+    // sort 방식에서 비교할때 해당 조건이 맞으면 1 아니면 -1  이 되야함
+    console.table(Year);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+    // reduce 메소드의 경우에는 a가 b까지 축척되는 동안 {}안에 행동을 이행한다.
+    // 밑에 경우에는 처음에 시작값이 0 이고 그 이후에 계속해서 해당 배열안에 passed , year 의 뺄샘 값을 더한다.
+    const life = inventors.reduce((a, b) => {return a + (b.passed - b.year);
+    }, 0);
+    console.log(life);
+    // const life = inventors.reduce(function(a,b){ 
+    // return a + (b.passed - b.year);}, 0);
 
     // 5. Sort the inventors by years lived
+    const Living = inventors.sort(function(a,b){
+      const A = a.passed - a.year;
+      const B = b.passed - b.year;
+      return A > B ? -1 : 1;});
+     /* if( A > B){
+        return -1;
+      } else { return 1;
+
+      }
+    })  */
+    console.log(Living);
+
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+     // const category = document.querySelector('.mw-category');
+    //  const links = Array.from(category.querySelectorAll('a'));
+      //querySelecorAll을 할 경우에는 node로 값이 나오고 안에 __prop__ 안에 map 메소드가 없기 때문에 
+      //이것을 Array 방식으로 전환 해주어야만 한다.
 
-
+   //   const de = links
+    //                .map(link => link.textContent)
+    //                .filter(streetName => streetName.includes('de'));
     // 7. sort Exercise
+
     // Sort the people alphabetically by last name
+
+    const alpha = people.sort((last,next)=>{
+    const [a1, a2] = last.split(', ');
+    const [b1, b2] = next.split(', ');
+    return a1 > b1  ? 1 : -1;
+  
+    });
+
+
+    /*const alpha = people.sort(function(last,next){
+    const [a1, a2] = last.split(', ');
+    const [b1, b2] = next.split(', ');
+    return a1 > b1  ? 1 : -1;
+  
+    });  */
+
+    console.log(alpha); 
+
+
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    // reduce 메소드 부분은 다시 한번 이해가 필요함
+    // 내가 이해한 부분이 맞다면 obj , item 인데 obj 예를 들어 obj = car 고 [] 안에 car가 발견되면
+    // obj[item] = 갯수가 증가하는거고 
+    // 아니면 0으로 두는것 
+    // reduce는 전체를 순회하면서 해당 구문안에 행동을 수행한다
+    const transpo = data.reduce(function(obj, item){
+      if(!obj[item]){
+        obj[item] = 0;
+
+      }
+      obj[item]++;
+      return obj;
+
+    },{
+
+    });
+    console.log(transpo);
 
   </script>
 </body>

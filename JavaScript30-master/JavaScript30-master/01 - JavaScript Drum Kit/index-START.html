@@ -65,6 +65,7 @@ function playSound(e){
 //audio 관련 태그는 처음 봄, [] 활용 하면 그 태그 안에 요소에 접근 가능
 //밑에 키 관련도 매한가지 밑에는 key 클레스를 가진 대상을 찾고 그안의 요소를 [] 으로 접근
 
+
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   console.log(key);
