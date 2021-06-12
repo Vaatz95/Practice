@@ -16,6 +16,62 @@
   </form>
 <script>
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+ 
+  let cities = [];
+  fetch(endpoint).then(blob => blob.json())
+                 .then(data => cities = data)
+//fetch 와 then 
+//fetch는 Promise을 뱉어냄
+
+function findMathces(Matchwords, cities){
+  return cities.filter(place => {
+    const regex = new RegExp(Matchwords, 'gi');
+    return place.city.match(regex) || place.state.match(regex);
+  })
+}
+
+
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}  // x = 입력값을 x 인자로 받아들인다.
+
+
+
+  function display(){
+    const matcharray = findMathces(this.value, cities);
+    const html = matcharray.map(place => {
+     const regex = new RegExp(this.value, 'gi');
+      // RegExp = 새로운 정규식 형성하는 메소드   g = global 문자열 전체 , i = 대소문자 상관없이
+     const cityName = place.city.replace(regex, `<span class ='hl'>${this.value}</span>`)
+     const stateName = place.state.replace(regex, `<span class ='hl'>${this.value}</span>`)
+     
+      // class = 'hl' = 하이라이트 효과
+      return `                                   
+        <li>
+          <span class='name'>${cityName}, ${stateName}</span>
+          <span class ='population'> ${numberWithCommas(place.population)}</span>
+        </li>  
+
+      `;
+    }).join(""); 
+    // join 하나의 배열로 묶는다.
+    suggestions.innerHTML = html;
+  }
+
+const searchInput = document.querySelector(".search")
+const suggestions = document.querySelector(".suggestions")
+
+searchInput.addEventListener('change', display);
+searchInput.addEventListener('keyup', display);
+
+
+//RegExp 메소드 
+//야구 게임에서 방식이 여기서도 활용됨
+//replace 메소드
+// class = 'hl' = 하이라이트 효과
+
+
 
 </script>
 </body>
