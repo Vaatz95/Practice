@@ -7,6 +7,69 @@
 <body>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
+  const canvas = document.querySelector('#draw');
+  const ctx = canvas.getContext('2d');
+  // 안에 내용물을 2d = 그림판 같이 바꾼다
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx.strokeStyle = '#BADA55';
+  ctx.globalCompositeOperation = 'multiply'; 
+  ctx.lineJoin= 'round';
+  ctx.lineCap= 'round';
+  ctx.lineWidth = 100;
+
+  let isDrawing = false;
+  let lastX = 0;
+  let lastY = 0;
+  let hue = 0;
+  let direction = true;
+
+  function draw(e){
+  	if(!isDrawing) return;
+
+  	console.log(e)
+  	ctx.beginPath();
+  	ctx.strokeStyle = `hsl(${hue}, 100% , 50%)`;
+  	ctx.moveTo(lastX,lastY);
+  	ctx.lineTo(e.offsetX,e.offsetY);
+  	ctx.stroke();
+  	[lastX, lastY] = [e.offsetX, e.offsetY]
+  	hue++;
+  	if (hue >= 360){
+  		hue =0;
+  	}
+  	// 페인팅 시작점을 업데이트 해주기 위해서 배열로 이를 해결함
+  if(ctx.lineWidth >= 100 || ctx.lineWidth <= 1){
+   direction = !direction
+
+  };
+  // 100을 넘기거나 같으면 혹은 1과 같아지거나 크면  
+  // direction = not direction 으로 전환 이후 다시 한번더 발생으로 
+  // !not direction이 됨으로 다시 direction으로 전환
+  
+  if(direction){
+  	ctx.lineWidth++;
+  	//그대로 참이면 증가 
+  }else{
+  	ctx.lineWidth--;
+  	//!direction 이면 감소  
+  }
+   }
+
+
+  canvas.addEventListener('mousedown',(e) => {
+  	isDrawing = true;
+  	[lastX, lastY] = [e.offsetX, e.offsetY]
+  	// 마우스를 찍었을때 최종 위치를 갱신해서 시작점으로 만들어줌
+  });
+
+  canvas.addEventListener('mousemove',draw);
+
+  canvas.addEventListener('mouseup',() => isDrawing = false);
+  canvas.addEventListener('mouseout',() => isDrawing = false);
+
+
 </script>
 
 <style>
