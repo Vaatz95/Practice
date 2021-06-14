@@ -20,26 +20,64 @@
     // Regular
 
     // Interpolated
+    console.log('hello I am a %s string!', "a")
 
     // Styled
+     console.log(%c 'hello I am a %s string!', 'fontSize:40px; background:red')
 
     // warning!
+    console.warn('ZZZZZ');
 
     // Error :|
+    console.error('fuck');
 
     // Info
-
+    console.info('Youre awesome')
     // Testing
+    console.assert(1===2, 'Youre wrong')  // 옳은 경우에는 콘솔에 표기 안됨
+
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'Wrong') // 이렇게 요소를 포함하는지 안하는지 등을 체크해서 없을시기( 거짓 ) 이면 뒤에 문장을 콘솔에 출력함
+
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p); // property 와 method 체크 가능
 
     // Grouping together
+    dogs.forEach(dog => {
+     console.group(`${dog.name}`);
+     console.log(`this is ${dog.name}`);
+     console.log(`${dog.name} is ${dog.age * 7} dog years old` );
+     console.log(`${dog.name} is ${dog.age} years old` );
+     console.groupEnd(`${dog.name}`)
+  //그룹으로 묶어서 지정한 양식대로 정보를 출력해줌 
+  //지금 위의 경우에는 출력시에 개이름의 그룹의 이름으로 나오고 안에 우리가 지정한 양식대로 정보가 출력되어있음
 
+    });
     // counting
+    // 해당 요소들 (단어 숫자 DOM 이든 뭐든.. 실시간으로 얼마나 사용했는지 카운트 해준다.)
+    console.count('KOO')
+    console.count('KOO')
+    console.count('KOO')
+    console.count('KOO')
+    console.count('KOO')
 
     // timing
+    console.time ('fetching Data');
+    fetch('https://api.github.com/users/wesbos')
+         .then(data => data.json()) // api 안에 json 파일 = 데이터 에 접근할때는 필수적으로 적어야함
+         .then(data => {
+          console.timeEnd('fetching Data');
+          console.log(data);
+         })
+         // 해당 부분의 작업의 완료할때 까지의 시간을 출력?
+
+      console.table(dogs)
+      // 테이블로 해당 객체의 내용들 보여줌
 
   </script>
 </body>

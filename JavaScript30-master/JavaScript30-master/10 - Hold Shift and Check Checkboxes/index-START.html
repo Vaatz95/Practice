@@ -96,6 +96,42 @@
   </div>
 
 <script>
+const boxes = document.querySelectorAll('.inbox input[type = "checkbox"]')
+var last_check;
+
+function shift(e){
+   let between = false;
+   if(e.shiftKey && this.checked){
+    boxes.forEach( box => { 
+  
+      console.log(boxes);
+  
+      if( box === this || box === last_check ){
+  
+      // ||가 이렇게 유용합니다~
+
+      between = !between;
+      console.log('Starting to check them in between!')
+    }
+    // between 이 !가 붙음으로서 true로 전환되고    
+
+   if(between){
+    //between이 참이면 - 사이에 box들에 checked가 실행됨
+     box.checked = true;
+
+    }
+ 
+   
+   });
+
+
+}
+   last_check = this ; // 내부에서 var를 선언할 경우에는 결과가 꼬여버린다.
+}
+
+boxes.forEach( box => box.addEventListener('click', shift));
+
+
 </script>
 </body>
 </html>
