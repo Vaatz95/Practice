@@ -1,0 +1,18 @@
+.wrapper {
+display: flex;
+flex-direction: column;
+/* flex의 기본 direction은 row */
+justify-content: space-around;
+align-items: stretch;
+height: 100vh;
+
+}
+
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: peru;
+  color:white;
+}
+

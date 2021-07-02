@@ -1,0 +1,43 @@
+.father {
+display: flex;
+/* flex의 기본 direction은 row */
+justify-content: space-around;
+
+height: 200vh;
+/* 항상 아버지 (부모) 쪽 클레스에 높이 혹은 폭의 값이 있어야 align이 작동한다 */
+
+
+}
+
+
+.children {
+  display: flex;
+  width: 300px;
+  height: 200px;
+  background: peru;
+  color:white;
+  font-size: 50px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+
+
+.children:nth-child(2){
+  background: black;
+  flex-grow: 3;
+  /* flex grow의 기본 값은  0 */
+  /*기본 공간 보다 더 큰 여유공간이 생길 경우 그 여유공간 만큼 더 커진다 */
+  /*flex- shrink = 2  두배로 더 줄어든다 */
+
+}
+
+
+.children:nth-child(3){
+  flex-grow: 2;
+ /* 비율이라 생각하면 쉽다 */
+}
+/* Children 에게만 줄수 있는 속성들 , align-self , align-item, order */
