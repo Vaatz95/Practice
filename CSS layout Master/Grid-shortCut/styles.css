@@ -1,0 +1,37 @@
+
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4,100px);
+  grid-template-rows: repeat(4,100px);
+ /*격자를 생각하고 4X4 칸에 위에 처럼 해당 layout을 설정해서 구역을 나눠줄 수 있다
+ 밑에 처럼 grid-area를 할당해서 각각의 부분에 집어넣는게 가능 */
+}
+
+
+.header {
+  background-color: chartreuse;
+  grid-column: span 4;
+  /* line 이다 갭을 사용해보면 알겠지만 맨 앞에 첫 간격이 1 그 이후 간격이 2 그리고 3 그래서 3으로 하면 2번째 렬에 있는 요소 까지 칠해진다*/
+  
+}
+
+.content {
+  background-color: cornflowerblue;
+  grid-column: 1 / -2 ;
+  grid-row: 2 / span 2 ;
+  /* 선택지점을 명시 그리고 거기서 2칸 만큼 */
+
+}
+
+.nav {
+  background-color: darkblue;
+  grid-row: span 2;
+
+}
+
+.footer {
+ background-color: darkorchid;
+ grid-column: span 4 /* -1 (마지막 까지) , span 셀 카운트(그 만큼 공간을 차지한다)  */;
+
+}

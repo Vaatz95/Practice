@@ -1,0 +1,36 @@
+
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: [first-line] 100px [second-linfe] 100px [third-line] 100px [forth-line] 100px [fifth-line];
+  grid-template-rows: repeat(4,100px [sexy-line]);
+ /*격자를 생각하고 4X4 칸에 위에 처럼 해당 layout을 설정해서 구역을 나눠줄 수 있다
+ 밑에 처럼 grid-area를 할당해서 각각의 부분에 집어넣는게 가능 */
+}
+
+
+.header {
+  background-color: chartreuse;
+  grid-column: span 4;
+ 
+  
+}
+
+.content {
+  background-color: cornflowerblue;
+  grid-column: first-line / forth-line ;
+  grid-row: sexy-line 1 / sexyline 3 ;
+
+}
+
+.nav {
+  background-color: darkblue;
+  grid-row: span 2;
+
+}
+
+.footer {
+ background-color: darkorchid;
+ grid-column: span 4 /* -1 (마지막 까지) , span 셀 카운트(그 만큼 공간을 차지한다)  */;
+
+}

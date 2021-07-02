@@ -1,0 +1,38 @@
+
+.grid {
+  display: grid;
+  grid-template-columns: auto 200px;
+  grid-template-rows: 100px repeat(2,200px) 100px;
+  grid-template-areas: 
+  "header header header header"
+  "content content content nav"
+  "content content content nav"
+  "footer footer footer footer"
+  ;
+ /*격자를 생각하고 4X4 칸에 위에 처럼 해당 layout을 설정해서 구역을 나눠줄 수 있다
+ 밑에 처럼 grid-area를 할당해서 각각의 부분에 집어넣는게 가능 */
+}
+
+
+.header {
+  background-color: chartreuse;
+  grid-area: header;
+}
+
+.content {
+  background-color: cornflowerblue;
+  grid-area: content;
+}
+
+.nav {
+  background-color: darkblue;
+  grid-area: nav;
+
+}
+
+.footer {
+ background-color: darkorchid;
+ grid-area: footer;
+ 
+
+}

@@ -1,0 +1,43 @@
+
+.grid {
+  display: grid;
+  gap: 5px;
+  height:50vh;
+  /*grid의 경우 rows에서 fr을 사용시에는 height를 설정해주어야만 한다 */
+  /* fr로유연한 크기 설정이 가능 */
+
+  grid-template: 
+    [header-start]"header header header header" 1fr [header-end]  /*row의 높이 */
+    [content-start]"content content content nav" 2fr [content-end]
+    [footer-start]"footer footer footer footer" 1fr [footer-end]  /1fr 1fr 1fr 1fr /*column의 폭 */;
+  /*grid -template 에서는 repeat 사용이 불가 */
+ 
+}
+
+
+.header {
+  background-color: chartreuse;
+  grid-area: header;
+  
+  /* line 이다 갭을 사용해보면 알겠지만 맨 앞에 첫 간격이 1 그 이후 간격이 2 그리고 3 그래서 3으로 하면 2번째 렬에 있는 요소 까지 칠해진다*/
+  
+}
+
+.content {
+  background-color: cornflowerblue;
+  grid-area: content;
+
+
+}
+
+.nav {
+  background-color: darkblue;
+  grid-area: nav;
+ 
+}
+
+.footer {
+ background-color: darkorchid;
+ grid-area: footer;
+
+}
