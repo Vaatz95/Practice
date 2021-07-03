@@ -1,0 +1,26 @@
+
+.grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(10, minmax(100px, 1fr)); /*minmax (최소 , 최대) 창을 줄였을때 줄어들거나 늘였을때의 최대 값을 설정해준다 */
+  grid-template-rows: repeat(4,100px);
+  grid-auto-columns: 100px;
+
+}
+
+
+
+
+
+
+
+.item:nth-child(odd) {
+  background-color: cornflowerblue;
+
+
+}
+
+.item:nth-child(even) {
+  background-color: darkblue;
+
+}

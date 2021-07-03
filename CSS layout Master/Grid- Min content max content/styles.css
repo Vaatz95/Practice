@@ -1,0 +1,29 @@
+
+.grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(20px, max-cotent));
+    /* max - content는 content안의 내용을 보존하는 방식의 최대값을 설정해주고 min max는 창의 크기를 줄였을때의 최대 , 최소 크기를 설정해준다 (1fr) */
+    /*그러니 여기서 처럼 두 방식을 혼합해서 maxmin안에 min-content, max-content를 설정해주면 최대한 줄였을대는 콘텐츠가 보존되는 최소 크기로 창을 최대로 늘렸을대는 컨텐츠 ( 안에 텍스트 같은것)
+    가 보존 되는 것의 최대 크기로 증가한다 */
+  grid-template-rows: 100px;
+  margin-bottom: 30px;
+
+}
+
+
+
+
+
+
+
+.item:nth-child(odd) {
+  background-color: cornflowerblue;
+
+
+}
+
+.item:nth-child(even) {
+  background-color: darkblue;
+
+}

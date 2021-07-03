@@ -2,19 +2,22 @@
 .grid {
   display: grid;
   gap: 5px;
-  height: 50vh;
+  height:250vh;
   grid-template-columns: repeat(4,100px);
-  grid-template-rows: repeat(4,100px);
- /*격자를 생각하고 4X4 칸에 위에 처럼 해당 layout을 설정해서 구역을 나눠줄 수 있다
- 밑에 처럼 grid-area를 할당해서 각각의 부분에 집어넣는게 가능 */
+  grid-template-rows: repeat(4,109px);
+  justify-content: center; /*그리드 전체에 영향을 준다*/
+  align-content: space-between;
+  /*place-content: 수직 수평 ; */
+
+
 }
 
 
 .header {
   background-color: chartreuse;
-  
-  
-  
+
+
+
 }
 
 .content {

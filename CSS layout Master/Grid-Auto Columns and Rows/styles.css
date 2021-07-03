@@ -1,0 +1,27 @@
+
+.grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4,100px);
+  grid-template-rows: repeat(4,100px);
+  grid-auto-flow: column; /*만약 설정해둔 grid를 넘어서 더 많은 것이 추가될 경우 row로 생성할지 colum 으로 생성할지 정해준다 */
+  grid-auto-columns: 100px;
+  /* grid-auto-rows: 100px; /*설정한 row보다 많은 데이터가 들어올 경우 추가적으로 row를 생성해줌 혹은 위에 기본으로 정해주지 않아도 자동으로 생성해준다*/
+}
+
+
+
+
+
+
+
+.item:nth-child(odd) {
+  background-color: cornflowerblue;
+
+
+}
+
+.item:nth-child(even) {
+  background-color: darkblue;
+
+}

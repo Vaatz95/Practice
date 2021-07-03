@@ -1,0 +1,39 @@
+
+.grid {
+  display: grid;
+  gap: 5px;
+  height:50vh;
+  grid-template-columns: repeat(4,100px);
+  grid-template-rows: repeat(4,100px);
+  justify-items: center; /*수평 */
+  align-items: center; /*수직 */
+  /* place-items 수직  수평 */
+  /*justify - items는 사전에 stretch로 설정되어있음  */
+
+}
+
+
+.header {
+  background-color: chartreuse;
+ 
+  /* line 이다 갭을 사용해보면 알겠지만 맨 앞에 첫 간격이 1 그 이후 간격이 2 그리고 3 그래서 3으로 하면 2번째 렬에 있는 요소 까지 칠해진다*/
+  
+}
+
+.content {
+  background-color: cornflowerblue;
+
+
+}
+
+.nav {
+  background-color: darkblue;
+ 
+
+}
+
+.footer {
+ background-color: darkorchid;
+
+
+}
