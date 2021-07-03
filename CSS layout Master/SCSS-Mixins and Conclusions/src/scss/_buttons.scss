@@ -1,0 +1,12 @@
+%button {
+    border-radius: 7px;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    background-color: peru;
+    color: white;
+    font-weight:500;
+    font-family: inherit;
+}
+
+/* 사전에 만들어둔 css 스타일을 html 요소에 넣어줌으로서 일일히 다 복사해서 집어넣거나 할 필요가 없다 */

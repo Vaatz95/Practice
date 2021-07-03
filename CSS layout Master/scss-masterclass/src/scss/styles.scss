@@ -1,0 +1,56 @@
+@import "_variables";
+@import "_mixins";
+
+
+
+
+
+a {
+  margin-bottom: 10px;
+  &:nth-child(odd) {
+    @include link("odd");
+  }
+  &:nth-child(even){
+    @include link("even");
+  }
+}
+
+
+
+
+body {
+  background: $bg;
+
+}
+
+h2 {
+   color: $bg;
+   font-size: $title;
+}
+
+.box {
+  margin-top: 20px;
+
+  &:hover {
+    background-color: green;
+  }
+
+  h2 {
+    color: blue;
+    &:hover {
+      color: red;
+    }
+  }
+
+button {
+  color: red;
+}
+
+}
+
+/* nesting을 할 경우에는 기존의 css 처럼 .box h2 이렇게 할 필요없이 그대로 안에 집어넣어주면 된다. 말그대로 nesting ( 둥지) 안에 넣어주는 것이다 */
+
+
+
+
+

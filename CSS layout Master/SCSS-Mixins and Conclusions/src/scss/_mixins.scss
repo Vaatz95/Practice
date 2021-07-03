@@ -1,0 +1,38 @@
+$minIphone: 500px;
+$maxIphone: 690px;
+$minTablet: $minIphone + 1;
+$maxTablet: 1120px;
+
+
+@mixin responsive($device) {
+    @if $device == 'iphone' {
+        @media screen and (min-width:$minIphone) and (max-width: $maxIphone){
+            @content;
+        }
+    
+    }@else if $device == 'tablet'{
+        @media screen and (min-width: $minTablet) and (max-width: $maxTablet ){
+            @content;
+        }
+
+
+    }@else if $device == 'iphone-l' {
+
+        @media screen and (min-width: $minIphone) and (max-width: $maxIphone)and (orientation: landscape){
+            @content;
+        }
+
+    
+    }@else if $device == 'ipad-l' {
+
+        @media screen and (min-width: $minTablet) and (max-width: $maxTablet ) and (orientation: landscape){
+            @content;
+        }
+
+
+
+    }
+}
+
+/*  반응형 인터페이스를 만들때 유용하다. 위에 처럼 responsive를 작성한 이후에 해당 styles.scss에서 @include responsive(위에서 정의한 인자)를 활용해 해당 기기의 디스플레이 크기에 따라 요소의 스타일이 
+바뀜을 알 수 있다. */

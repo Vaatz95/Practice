@@ -1,0 +1,1 @@
+@charset "UTF-8";a{margin-bottom:10px}a:nth-child(even),a:nth-child(odd){text-decoration:none;display:block}a:nth-child(even) else,a:nth-child(odd) else{color:red}body{background:#fff}h2{color:#fff;font-size:32px}.box{margin-top:20px}.box:hover{background-color:green}.box h2{color:#00f}.box button,.box h2:hover{color:red}
