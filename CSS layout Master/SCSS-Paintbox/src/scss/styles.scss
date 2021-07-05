@@ -6,11 +6,25 @@ body {
   font-family: 'Times New Roman', Times, serif;
   height: auto;
 
+  .box {
+    margin-bottom: 100px;
+    display: grid;
+    justify-content: center;
+    margin-top: 50px;
+
+    a {
+      @extend %box;
+    }
+
+  }
+
+
   h2 {
     @extend %text
   }
 
   h3{
+    margin-top: 100px;
     @extend %text;
     font-size: 10px;
  
@@ -18,15 +32,22 @@ body {
 
   }
  
+
+
   h4{
 
     @extend %text;
     font-size: 30px;
   }
 
+
+  .Emailbox {
+    margin-top: 600px;
+    display: flex;
+    flex-direction: column;
+
   h5{
   @extend %text;
-  margin-top: 30%;
   font-size: 15px;
   margin-bottom: 10px;
   }
@@ -59,6 +80,7 @@ body {
 
   }
 
+ }
 
  
   header {
@@ -104,12 +126,7 @@ body {
 
     }
     
-    img {
-
-      padding-right: 450px;
-
-    }
-
+  
     
     
     .right {
@@ -178,14 +195,23 @@ main {
     justify-items: center;
     align-items: center;
     font-size: 30px;
+    
+    &:nth-child(4) {
+    background-color: $bg4;
+    }
+
 
     button {
      
-      padding: 20px 20px;
-      border: 1px solid black;
+      padding: 21.2px 20px;
+      border-style: none;
+      border-left: 1px solid black;
       z-index: inherit;
       display: inline-block;
       background-color: transparent;
+      border-radius: 0px;
+      margin-left: -60px;
+      
       
     }
 
@@ -195,6 +221,7 @@ main {
     a {
       @extend %box;
       display: inline-block;
+   
     }
     img {
       width: $ImageWidth;
@@ -217,7 +244,7 @@ main {
 }
 
  .sub {
-   margin-top: 100px;
+   margin-top: 200px;
    display: grid;
    grid-template-columns: repeat(3, 535px);
    grid-template-rows: 400px;
@@ -225,7 +252,31 @@ main {
    justify-items: center;
    align-items: center;
    text-align: center;
+   margin-bottom: 200px;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    
 
+    h1 {
+   
+      font-size: 15px;
+     
+    }
+
+    h3 {
+      margin-top: 0px;
+      font-size: 20px;
+    }
+
+    a {
+      @extend %box;
+
+    }
+
+  
+
+  }
    
 
   } 
@@ -239,7 +290,7 @@ main {
   
 
   .wrapper {
-    background-color: $bg;
+    background-color: $bg5;
     display: grid;
     width: $ImageWidth;
     height: $ImageHeight;
@@ -248,6 +299,12 @@ main {
     justify-items: center;
     align-items: center;
     font-size: 27px;
+
+    img{
+      width: $ImageWidth;
+      height: $ImageHeight;
+    }
+
 
     a {
       @extend %box;
@@ -274,26 +331,47 @@ main {
     margin-top: 100px;
     display: grid;
     grid-template-columns: repeat(4, 200px);
-    grid-template-rows: 100px;
+    grid-template-rows: 100px 80px ;
     justify-content: center;
     justify-items: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 200px;
+    margin-left: 50px;
 
     a {
-      @extend %box;
+
+      margin-bottom: 100px;
+
+
     }
- 
+
+    .product4 {
+
+      img {
+        
+        border:none;
+
+      }
+    }
+
 
     img{
    
-      width: 70%;
-      height: 70%; 
+      width: 50%;
+      height: 50%; 
+      padding-right: 50px;
       border-right: 1px solid black;
-      padding-right: 30px;
+      
+  
     }
  
+    .number {
+      color: grey;
+      padding-right: 50px;
+    }
+
+
+
    } 
 
 
@@ -315,9 +393,21 @@ main {
       justify-items: center;
       align-items: center;
       font-size: 27px;
+     
 
       a {
-        @extend %box;
+    
+        @extend %arrow;
+        margin-right: -50px;
+      }
+
+      button {
+        font-size: 15px;
+        border: none;
+        background-color:transparent;
+        
+       
+        
       }
 
       h1{
@@ -332,9 +422,14 @@ main {
       }
    
       .textbox{
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        width: 50%;
-        height: 25%;
+        width: 90%;
+        height: 30%;
+       
+        
+
       }
   
   
@@ -382,7 +477,7 @@ main {
       height: $ImageHeight;
       }
    
-      .textbox{
+      .textbox {
         text-align: center;
         width: 50%;
         height: 25%;
@@ -407,10 +502,13 @@ main {
       cursor: pointer;
       width: 400px;
       height: 400px;
-      opacity: 1;
+      opacity: 0.5;
       &:hover {
-        opacity: 0.5;
+        opacity: 1;
+
       }
+       
+      
       
     }
   }
@@ -443,6 +541,16 @@ main {
   .wrapper {
     display: flex;
     flex-direction: column;
+
+    .line {
+      
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      padding-left: 200px;
+      padding-right: 200px;
+
+    }
+   
     li { color: grey;
         font-weight: 300px;
 
@@ -450,6 +558,7 @@ main {
         text-decoration: none;
         color: black;
       }
+  
 
 
   
