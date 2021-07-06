@@ -1,0 +1,106 @@
+@import "_variables";
+@import "_mixins";
+
+body{
+  margin: 0px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1.5fr;
+  grid-template-rows: repeat(7, 1fr);
+  background-color: $border;
+
+.number{
+  width: 100%;
+  height: 100%;;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  color:$border;
+  font-size: 25px;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid $border;  
+
+  transition: color 0.3s linear, background-color 0.3s linear;
+  &:hover {
+    background-color: $border;
+    color: white;
+  }
+  
+
+
+}
+
+.scrolling_text {
+
+  width: 100%;
+  height: 100%;;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  border: 1px solid $border;
+  color:$border;
+  font-size: 25px;
+  background-color: white;
+  overflow: hidden;
+  font-size: 30px;
+  span {
+  
+   overflow: hidden;
+   animation: scrollText 7s linear infinite;
+
+   @keyframes scrollText {
+
+    from {
+      transform: translateX(100%);
+
+    }
+     
+    to {
+      transform: translateX(-100%);
+    }
+
+   }
+
+  }
+
+ /*keyframes 사용자가 직접 애니메이션 효과를 정의할때 사용 */
+
+
+  }
+  
+
+
+
+
+
+
+.image {
+  width: 100%;
+  height: 100%;;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  border: 1px solid $border;
+  grid-area: 2 / 2 / 7 / 3;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+  }
+  
+
+}
+
+
+}

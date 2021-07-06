@@ -1,0 +1,58 @@
+@mixin link($word) {
+    text-decoration: none;
+    display: block;
+ @if $word =='odd' {
+     color:blue;
+ }else {
+     color:red;
+ }
+
+/* 자바스크립트에서 if구문과 함수를 사용하듯이 인자를 받아들여서 활용할 수 있고 해당 인자를 활용해 if 구문으로 작성이 가능해짐 */
+
+}
+
+
+%top {
+    font-weight: 200px;
+    font-size: 25px;
+    border:1px solid $border;
+    width: 100%;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    color:$border;
+
+}
+
+
+%center{
+    font-weight: 200px;
+    font-size: 25px;
+    border: 1px solid $border;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 125px;
+    color:$border;
+
+}
+
+
+%footer {
+    font-weight: 200px;
+    font-size: 25px;
+    border: 1px solid $border;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 125px;
+    color:$border;
+
+
+}
