@@ -1,0 +1,157 @@
+@import "_variables";
+@import "_mixins";
+
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+
+  header{ 
+    position: fixed;
+     display: grid;
+     grid-template-columns: 2fr 1fr;
+     grid-template-rows: 1fr;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+     margin-bottom: 100px;
+     z-index: 1;
+
+    .first {
+      display: grid;
+      grid-template-columns: 1fr 1fr 4fr;
+      grid-template-rows: 50px;
+      
+      h1 {
+        display: flex;
+        margin:0px;
+        align-items: center;
+      }
+     
+      
+
+      .menu {
+        display: flex;
+        align-content: center;
+        padding-left: 20px;
+        font-size: 13px;
+        margin:0px;
+        
+      }
+
+
+
+      h2{
+        margin:0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px;
+        column-gap: 30px;
+        font-size: 27px;
+        justify-items: center;
+        align-items: center;
+        color:gray
+        
+        
+   
+       
+      }
+
+      &:hover {
+        background-color: grey;
+        .menu {
+          color:black
+        }
+
+        h2{
+          color:white;
+        }
+
+      }
+
+
+    }
+
+
+
+    
+  
+    .last {
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 50px;
+      transition: background-color 0s linear;
+
+      &:hover {
+        background-color: gray;
+        
+      }
+
+      h1{
+        margin:0px;
+        display: flex;
+        font-size: 30px;
+        align-items: flex-start;
+  
+       
+      }
+
+      h2{
+        margin:0px;
+        display: flex;
+        font-size: 30px;
+       
+      }
+
+      h3{
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-size: 15px;
+        padding-right:10px;
+      }
+
+
+
+     }
+
+    }
+
+
+
+
+
+
+  main {
+   margin: 0px;
+  
+   height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(auto-fill, 2fr);
+ 
+ .gallery {
+
+    display: flex;;
+    flex-direction: column;
+    text-transform: uppercase;
+   
+    img{
+      width: 100%;
+      height: 90%;
+    }
+
+    h1 { 
+      
+      padding-left: 30px;  
+      font-size: 20px;}
+
+ }
+}
+
+
+
+}
+

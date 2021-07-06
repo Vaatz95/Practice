@@ -1,0 +1,14 @@
+@mixin link($word) {
+    text-decoration: none;
+    display: block;
+ @if $word =='odd' {
+     color:blue;
+ }else {
+     color:red;
+ }
+
+/* 자바스크립트에서 if구문과 함수를 사용하듯이 인자를 받아들여서 활용할 수 있고 해당 인자를 활용해 if 구문으로 작성이 가능해짐 */
+
+}
+
+
