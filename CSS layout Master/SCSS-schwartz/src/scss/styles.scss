@@ -1,0 +1,571 @@
+@import "_variables";
+@import "_mixins";
+
+body {
+
+  margin: 0px;
+  width: 100%;
+  height: auto;
+
+ nav {
+
+  display: grid;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px;
+  justify-content: space-between;
+  text-transform: uppercase;
+  z-index: 1;
+  background-color: white;
+
+     .menu_left {
+       display: flex;
+       justify-content: flex-start;
+       padding-left: 200px;
+     }
+
+     .menu_right {
+       display: flex;
+       justify-content: flex-end;
+       padding-right:200px;
+     }
+   
+ }
+  
+
+ h2 {
+   text-align: center;
+   margin-top: 100px;
+   margin-bottom: 100px;
+   font-size: 30px;
+ }
+
+
+
+ .gallery {
+   padding-top: 200px;
+   display: grid;
+   grid-template-columns: 1fr 2fr 1fr;
+   grid-template-rows: 600px;
+   justify-items: center;
+   img {
+     height: 100%;
+   }
+
+ }
+
+main {
+  display: grid;
+  grid-template-columns: 0.7fr 2fr 0.7fr;
+  grid-template-rows: 400px;
+ .article {
+  ::before {
+    content: "About";
+    font-size: 20px;
+    padding-right: 40px;
+    font-weight: bolder;
+  
+  }
+  
+  font-size: 25px;
+
+
+ }
+
+
+}
+
+.sub {
+ 
+  display: grid;
+  grid-template-columns: 0.7fr 2fr 0.7fr;
+  grid-template-rows: repeat(auto,400px);
+
+
+  .sub_aritlce{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-top: 1px solid $bg;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .text{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 2fr 1fr;
+
+      p {
+        font-size: 30px;
+        width: 80%;
+        margin-top:0px;
+      }
+
+      .wrapper{
+        padding-top: 28px;
+
+      button {
+        width: 33%;
+        height: 60%;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid gray;
+        font-weight: bolder;
+        font-size: 18px;
+
+        &:hover {
+          transition: background-color 0.3s linear , color 0.3s linear;
+          background-color: black;
+          color:white;
+
+        }
+     
+        
+      }
+
+    }
+
+    }
+    
+
+
+    img { 
+      padding-top: 10px;
+      height: 90%;
+      width: 100%;
+
+    }
+
+
+  }
+
+
+
+
+  .sub_aritlce2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-top: 1px solid $bg;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .text{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 2fr 1fr;
+      padding-left: 20px;
+
+      p {
+        font-size: 30px;
+        width: 80%;
+        margin-top:0px;
+      }
+
+
+   
+  
+      .wrapper{
+        padding-top: 28px;
+   
+      button {
+       
+        width: 33%;
+        height: 60%;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid $bg;
+        font-weight: bolder;
+        font-size: 18px;
+
+        &:hover {
+          transition: background-color 0.3s linear , color 0.3s linear;
+          background-color: black;
+          color:white;
+
+        }
+     
+        
+      }
+
+    }
+     
+    }
+    
+
+    img { 
+      padding-top: 10px;
+      height: 90%;
+      width: 100%;
+
+    }
+
+
+  }
+
+
+
+
+
+
+
+  .sub_aritlce3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-top: 1px solid $bg;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+   
+    .text{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.5fr 1.5fr 0.5fr 0.5fr;
+      padding-left: 20px;
+
+      h1 { 
+        
+        margin-bottom: 0px;
+      }
+
+
+      img {
+        
+        width: 100%;
+        
+       
+      }
+
+      p {
+        font-size: 25px;
+
+      }
+   
+  
+      .wrapper{
+        padding-top: 28px;
+   
+      button {
+       
+        width: 33%;
+        height: 45%;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid $bg;
+        font-weight: bolder;
+        font-size: 18px;
+
+        &:hover {
+          transition: background-color 0.3s linear , color 0.3s linear;
+          background-color: black;
+          color:white;
+
+        }
+     
+        
+      }
+
+    }
+     
+    }
+    
+
+  
+
+
+  }
+
+
+
+
+  .sub_aritlce4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-top: 1px solid $bg;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .text{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px 100px 200px;
+      padding-left: 20px;
+
+      h1 { 
+        font-size: 25px;
+        margin-bottom: 0px;
+      }
+
+      p {
+        font-size: 30px;
+        margin-top: 0px;
+
+      }
+   
+  
+      .wrapper{
+        padding-top: 28px;
+   
+      button {
+       
+        width: 33%;
+        height: 24%;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid $bg;
+        font-weight: bolder;
+        font-size: 18px;
+
+        &:hover {
+          transition: background-color 0.3s linear , color 0.3s linear;
+          background-color: black;
+          color:white;
+
+        }
+     
+        
+      }
+
+    }
+     
+    }
+    
+   .image { 
+     display: grid;
+     width: 100%;
+     justify-items: flex-end;
+     align-content: center;
+     padding-top: 30px;
+     img {
+      width:95%;
+      height: 90%;
+
+     }
+
+
+
+   }
+
+
+
+  }
+
+
+  .sub_aritlce5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-top: 1px solid $bg;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+   
+    .text{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.5fr 1.5fr 0.5fr 0.5fr;
+      padding-left: 20px;
+
+      h1 { 
+        
+        margin-bottom: 0px;
+      }
+
+
+      img {
+        
+        width: 100%;
+        
+       
+      }
+
+      p {
+        font-size: 25px;
+
+      }
+   
+  
+      .wrapper{
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 20px;
+    
+      button {
+        
+        width: 33%;
+        height: 45%;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid $bg;
+        font-weight: bolder;
+        font-size: 18px;
+
+        &:hover {
+          transition: background-color 0.3s linear , color 0.3s linear;
+          background-color: black;
+          color:white;
+
+        }
+     
+        
+      }
+
+    }
+     
+    .wrapper2 {
+      display: flex;
+      align-items: flex-start;
+
+      button {
+       
+        width: 33%;
+        height: 40%;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid $bg;
+        font-weight: bolder;
+        font-size: 18px;
+
+        &:hover {
+          transition: background-color 0.3s linear , color 0.3s linear;
+          background-color: black;
+          color:white;
+
+        }
+     
+        
+      }
+
+
+
+    }
+
+
+
+    }
+    
+
+  
+
+
+  }
+
+
+
+
+
+  .sub_text{
+    border-top: 1px solid $bg;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    
+    .content {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
+
+    p {
+      font-size: 19px;
+      width: 75%;
+
+
+    }
+
+    button {
+      width: 33%;
+      height: 45%;
+      background-color: white;
+      border-radius: 30px;
+      border: 1px solid $bg;
+      
+      font-weight: bolder;
+      font-size: 15px;
+
+      &:hover {
+        transition: background-color 0.3s linear , color 0.3s linear;
+        background-color: black;
+        color:white;
+
+      }
+
+
+
+    }
+
+    }
+
+
+
+  }
+
+
+
+    }
+    
+
+    footer {
+      width: 100%;
+      height: 300px;
+      background-color: $bg;
+      display: grid;
+      grid-template-columns: 0.7fr 2fr 0.7fr;
+      grid-template-rows: 1fr;
+      
+      .nav {
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr 0.7fr 0.7fr;
+        grid-template-rows: 4fr 0.4fr 0.4fr 0.4fr 0.4fr 0.4fr;
+        margin-bottom: 50px;
+       
+        p {
+
+         &:nth-child(2) {
+          padding-left: 60px;
+          padding-top: 30px;
+
+         }
+
+         &:nth-child(3) {
+          padding-left: 140px;
+          padding-top: 30px;
+
+         }
+
+
+          margin:0px;
+        }
+        
+ 
+       
+
+      }
+      
+
+    }
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
