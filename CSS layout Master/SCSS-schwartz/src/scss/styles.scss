@@ -19,18 +19,53 @@ body {
   text-transform: uppercase;
   z-index: 1;
   background-color: white;
+  
+  &.box {
+
+    box-shadow: 0px 0px 5px black;
+
+  }
 
      .menu_left {
        display: flex;
        justify-content: flex-start;
        padding-left: 200px;
+     
+      h1{
+        font-size: 20px;
+      }
+
+      
+     &.change {
+      
+      h1{
+      
+      font-size: 30px;
+      transition: all 0.5s ;
+    
+      }
+     }
+    
+
+
      }
 
      .menu_right {
        display: flex;
        justify-content: flex-end;
        padding-right:200px;
-     }
+
+       &.change {
+        h1{
+        
+          transform: scale(0,0);
+          transition: all 0.2s ease-in;
+
+        }
+       }
+
+      }
+
    
  }
   
@@ -50,8 +85,29 @@ body {
    grid-template-columns: 1fr 2fr 1fr;
    grid-template-rows: 600px;
    justify-items: center;
+
+  
    img {
      height: 100%;
+
+     animation: Popup 0.5s linear;
+
+     @keyframes Popup {
+   
+      from {
+        opacity: 0;
+      }
+   
+      to{
+        opacity: 1;
+      }
+      
+    }
+
+
+
+
+
    }
 
  }
